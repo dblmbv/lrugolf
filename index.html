@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lenoir-Rhyne Golf | Men's & Women's Golf</title>
+<meta name="description" content="Lenoir-Rhyne University Men's and Women's Golf — rosters, coaches, schedules, results, news and recruiting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lr-red:#A41F2F;      /* LR red (PMS 187) — confirm against official brand toolkit */
+    --lr-red-dark:#7E1622;
+    --black:#111;
+    --ink:#1b1b1b;
+    --muted:#5f6368;
+    --line:#e4e4e4;
+    --bg:#f6f5f3;
+    --white:#fff;
+    --green:#1f4d33;
+    --radius:10px;
+    --max:1200px;
+    --head:'Oswald','Arial Narrow',Impact,sans-serif;
+    --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--lr-red)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  h1,h2,h3,h4{font-family:var(--head);text-transform:uppercase;letter-spacing:.02em;line-height:1.1;margin:0 0 .5em}
+  .sr{position:absolute;left:-9999px}
+
+  /* ---------- Header ---------- */
+  .utility{background:var(--black);color:#ccc;font-size:12.5px}
+  .utility .wrap{display:flex;justify-content:space-between;align-items:center;height:34px;gap:12px}
+  .utility a{color:#ddd;text-decoration:none;margin-left:16px}
+  .utility a:hover{color:#fff}
+  header.main{background:var(--lr-red);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+  header.main .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  .logo-slot{width:46px;height:46px;border:2px dashed rgba(255,255,255,.7);border-radius:6px;display:grid;place-items:center;font-size:8.5px;line-height:1.1;text-align:center;font-weight:700;text-transform:uppercase;color:#fff;padding:2px}
+  .brand-text{display:flex;flex-direction:column;line-height:1}
+  .brand-text b{font-family:var(--head);font-size:22px;letter-spacing:.04em;text-transform:uppercase}
+  .brand-text span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.85;margin-top:4px}
+  nav.primary ul{list-style:none;display:flex;gap:2px;margin:0;padding:0}
+  nav.primary a{display:block;white-space:nowrap;color:#fff;text-decoration:none;font-family:var(--head);text-transform:uppercase;font-size:15px;letter-spacing:.04em;padding:10px 9px;border-radius:6px}
+  .brand-text b{white-space:nowrap}
+  svg.scene{position:absolute;inset:0;width:100%;height:100%}
+  nav.primary a:hover{background:rgba(0,0,0,.15)}
+  nav.primary a.active{background:var(--black)}
+  .menu-btn{display:none;background:none;border:2px solid rgba(255,255,255,.6);color:#fff;border-radius:6px;padding:8px 12px;font-family:var(--head);text-transform:uppercase;letter-spacing:.06em;font-size:14px;cursor:pointer}
+  @media (max-width:1180px){
+    .menu-btn{display:block}
+    nav.primary{position:absolute;top:72px;left:0;right:0;background:var(--lr-red-dark);display:none}
+    nav.primary.open{display:block}
+    nav.primary ul{flex-direction:column;padding:8px 12px 16px}
+    nav.primary a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,.12);border-radius:0}
+    .utility .links{display:none}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;color:#fff;overflow:hidden;background:#0d2a1b;min-height:560px;display:flex;align-items:flex-end}
+  .hero svg.scene,.hero img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.05) 100%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 45%)}
+  .hero .wrap{position:relative;z-index:2;padding-bottom:70px;padding-top:80px;width:100%}
+  .eyebrow{display:inline-block;background:var(--lr-red);color:#fff;font-family:var(--head);text-transform:uppercase;letter-spacing:.14em;font-size:13px;padding:6px 12px;border-radius:3px;margin-bottom:18px}
+  .hero h1{font-size:clamp(44px,8vw,96px);margin:0 0 14px;letter-spacing:.01em}
+  .hero h1 em{font-style:normal;color:#fff;-webkit-text-stroke:0;border-bottom:6px solid var(--lr-red)}
+  .hero p.lead{font-size:clamp(16px,2vw,19px);max-width:620px;opacity:.92;margin:0 0 28px}
+  .photo-note{position:absolute;right:16px;top:16px;z-index:3;background:rgba(0,0,0,.55);border:1px dashed rgba(255,255,255,.6);font-size:12px;padding:6px 10px;border-radius:4px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:var(--head);text-transform:uppercase;letter-spacing:.08em;font-size:15px;padding:13px 22px;border-radius:4px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+  .btn.red{background:var(--lr-red);color:#fff}
+  .btn.red:hover{background:var(--lr-red-dark)}
+  .btn.ghost{border-color:#fff;color:#fff}
+  .btn.ghost:hover{background:#fff;color:var(--black)}
+  .btn.dark{background:var(--black);color:#fff}
+  .btn.outline{border-color:var(--lr-red);color:var(--lr-red);background:#fff}
+
+  /* ---------- Page header ---------- */
+  .page-head{background:var(--black);color:#fff;padding:54px 0 46px;position:relative;overflow:hidden}
+  .page-head::before{content:"";position:absolute;right:-80px;top:-60px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(164,31,47,.35)}
+  .page-head .wrap{position:relative}
+  .page-head h1{font-size:clamp(36px,6vw,64px);margin:0}
+  .page-head .crumb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#f2a8b1;margin-bottom:10px;font-weight:600}
+  .page-head p{margin:12px 0 0;color:#cfcfcf;max-width:640px}
+
+  /* ---------- Sections ---------- */
+  section.block{padding:64px 0}
+  section.block.white{background:#fff}
+  .sec-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+  .sec-title h2{font-size:clamp(28px,4vw,40px);margin:0;position:relative;padding-left:16px}
+  .sec-title h2::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:6px;background:var(--lr-red)}
+  .sec-title a{font-family:var(--head);text-transform:uppercase;letter-spacing:.08em;text-decoration:none;font-size:14px}
+  .grid{display:grid;gap:22px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.08),0 6px 20px rgba(0,0,0,.04);overflow:hidden}
+  .placeholder{background:#fff7d6;border:1px dashed #d6b23c;color:#6b5512;border-radius:6px;padding:10px 12px;font-size:13.5px}
+  .placeholder b{font-weight:700}
+  .ph-inline{background:#fff7d6;color:#6b5512;border:1px dashed #d6b23c;border-radius:4px;padding:1px 6px;font-size:12.5px;white-space:nowrap}
+
+  /* Team tiles */
+  .team-tile{position:relative;min-height:340px;border-radius:var(--radius);overflow:hidden;color:#fff;text-decoration:none;display:flex;align-items:flex-end;background:#222}
+  .team-tile .bg{position:absolute;inset:0}
+  .team-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.05) 70%)}
+  .team-tile .txt{position:relative;z-index:2;padding:28px}
+  .team-tile h3{font-size:38px;margin:0 0 6px}
+  .team-tile p{margin:0 0 14px;opacity:.9}
+  .team-tile .go{font-family:var(--head);text-transform:uppercase;letter-spacing:.1em;font-size:14px;border-bottom:2px solid var(--lr-red);padding-bottom:2px}
+  .team-tile:hover .bg{transform:scale(1.04)}
+  .team-tile .bg{transition:transform .5s}
+
+  /* Stats strip */
+  .strip{background:var(--black);color:#fff}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .strip .stat{padding:28px 18px;border-left:1px solid #2b2b2b;text-align:center}
+  .strip .stat:first-child{border-left:none}
+  .strip .num{font-family:var(--head);font-size:40px;color:#fff;line-height:1}
+  .strip .lab{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-top:8px}
+  @media (max-width:700px){.strip .wrap{grid-template-columns:repeat(2,1fr)}.strip .stat:nth-child(3){border-left:none}.strip .stat{border-top:1px solid #2b2b2b}}
+
+  /* Event cards */
+  .event{display:flex;gap:0;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .event .date{background:var(--lr-red);color:#fff;min-width:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 8px;text-align:center}
+  .event .date .m{font-family:var(--head);text-transform:uppercase;letter-spacing:.1em;font-size:14px}
+  .event .date .d{font-family:var(--head);font-size:30px;line-height:1}
+  .event .body{padding:16px 18px;flex:1}
+  .event .tag{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+  .event h4{font-size:20px;margin:4px 0 4px}
+  .event .meta{font-size:14px;color:var(--muted)}
+
+  /* Roster */
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+  .toolbar input{flex:1;min-width:220px;padding:11px 14px;border:1px solid #ccc;border-radius:6px;font:inherit}
+  .chip{border:1px solid #ccc;background:#fff;border-radius:999px;padding:8px 14px;font:600 13px var(--body);cursor:pointer}
+  .chip.on{background:var(--black);border-color:var(--black);color:#fff}
+  .viewtog{margin-left:auto;display:flex;border:1px solid #ccc;border-radius:6px;overflow:hidden}
+  .viewtog button{border:0;background:#fff;padding:9px 14px;font:600 13px var(--body);cursor:pointer}
+  .viewtog button.on{background:var(--lr-red);color:#fff}
+  .player{text-align:left}
+  .player .ph{aspect-ratio:4/5;background:linear-gradient(160deg,#2a2a2a,#111);position:relative;display:grid;place-items:center;color:#fff;overflow:hidden}
+  .player .ph img{width:100%;height:100%;object-fit:cover}
+  .player .ph .ini{font-family:var(--head);font-size:64px;opacity:.9}
+  .player .ph .tag{position:absolute;bottom:10px;left:10px;font-size:11px;background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.5);padding:3px 8px;border-radius:3px}
+  .player .ph .yr{position:absolute;top:0;right:0;background:var(--lr-red);font-family:var(--head);font-size:16px;padding:6px 12px;letter-spacing:.05em}
+  .player .info{padding:16px 18px 18px}
+  .player h3{font-size:22px;margin:0 0 8px}
+  .player dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13.5px}
+  .player dt{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.08em;padding-top:2px}
+  .player dd{margin:0}
+  table.data{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:14.5px}
+  table.data th{background:var(--black);color:#fff;text-align:left;font-family:var(--head);text-transform:uppercase;letter-spacing:.08em;font-weight:500;padding:12px 14px;font-size:14px}
+  table.data td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+  table.data tr:nth-child(even) td{background:#fafafa}
+  .tablewrap{overflow-x:auto}
+
+  /* Schedule */
+  .tabs{display:flex;gap:0;margin-bottom:26px;border-bottom:2px solid var(--line)}
+  .tabs button{background:none;border:0;padding:12px 20px;font-family:var(--head);text-transform:uppercase;letter-spacing:.08em;font-size:17px;color:var(--muted);cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-2px}
+  .tabs button.on{color:var(--black);border-color:var(--lr-red)}
+  .sched-row{display:grid;grid-template-columns:150px 1fr 220px;gap:18px;align-items:center;padding:18px 20px;background:#fff;border-radius:8px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.06);border-left:5px solid #ccc}
+  .sched-row.done{border-left-color:var(--black)}
+  .sched-row.next{border-left-color:var(--lr-red)}
+  .sched-row.win{border-left-color:#c9a227}
+  .sched-row .when{font-family:var(--head);font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+  .sched-row .when small{display:block;font-family:var(--body);font-size:12px;color:var(--muted);text-transform:none;letter-spacing:0}
+  .sched-row h4{margin:0 0 3px;font-size:19px}
+  .sched-row .meta{font-size:13.5px;color:var(--muted)}
+  .sched-row .res{text-align:right;font-weight:700}
+  .sched-row .res small{display:block;font-weight:500;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;margin-left:6px;vertical-align:middle}
+  .badge.home{background:var(--lr-red);color:#fff}
+  .badge.win{background:#c9a227;color:#111}
+  .badge.next{background:var(--black);color:#fff}
+  @media (max-width:720px){.sched-row{grid-template-columns:1fr;gap:6px}.sched-row .res{text-align:left}}
+  .group-h{font-family:var(--head);text-transform:uppercase;letter-spacing:.12em;font-size:15px;color:var(--muted);margin:30px 0 12px}
+
+  /* News */
+  .news .img{aspect-ratio:16/9;background:linear-gradient(135deg,var(--lr-red),#3a0b11);display:grid;place-items:center;color:#fff;font-family:var(--head);font-size:13px;letter-spacing:.14em;text-transform:uppercase;position:relative}
+  .news .img img{width:100%;height:100%;object-fit:cover}
+  .news .body{padding:18px 20px 22px}
+  .news .cat{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lr-red)}
+  .news h3{font-size:21px;margin:6px 0 8px;text-transform:none;font-family:var(--head);letter-spacing:.01em}
+  .news .date{font-size:13px;color:var(--muted)}
+
+  /* Coaches */
+  .coach{display:grid;grid-template-columns:220px 1fr}
+  .coach .ph{background:linear-gradient(160deg,#2a2a2a,#111);color:#fff;display:grid;place-items:center;min-height:260px;position:relative}
+  .coach .ph .ini{font-family:var(--head);font-size:72px}
+  .coach .ph .tag{position:absolute;bottom:10px;left:10px;font-size:11px;border:1px dashed rgba(255,255,255,.5);padding:3px 8px;border-radius:3px}
+  .coach .info{padding:24px 26px}
+  .coach .title{color:var(--lr-red);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+  .coach h3{font-size:30px;margin:0 0 4px}
+  @media (max-width:640px){.coach{grid-template-columns:1fr}}
+
+  /* Gallery */
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .gal .tile{aspect-ratio:1;border-radius:6px;background:#e9e7e2;border:2px dashed #cfcac0;display:grid;place-items:center;color:#8b8578;font-size:12.5px;text-align:center;padding:10px;overflow:hidden}
+  .gal .tile img{width:100%;height:100%;object-fit:cover}
+  .gal .tile.big{grid-column:span 2;grid-row:span 2}
+  @media (max-width:700px){.gal{grid-template-columns:repeat(2,1fr)}}
+
+  /* Feature split */
+  .split{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  @media (max-width:860px){.split{grid-template-columns:1fr}}
+  .ticks{list-style:none;padding:0;margin:18px 0}
+  .ticks li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid var(--line)}
+  .ticks li::before{content:"";position:absolute;left:0;top:14px;width:18px;height:18px;border-radius:50%;background:var(--lr-red);box-shadow:inset 0 0 0 5px #fff,0 0 0 2px var(--lr-red)}
+
+  .cta-band{background:var(--lr-red);color:#fff;padding:54px 0}
+  .cta-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .cta-band h2{font-size:clamp(28px,4vw,42px);margin:0}
+  .cta-band p{margin:6px 0 0;opacity:.9}
+
+  /* Footer */
+  footer{background:var(--black);color:#bbb;padding:56px 0 24px;font-size:14px}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+  footer h4{color:#fff;font-size:16px;letter-spacing:.1em;margin-bottom:14px}
+  footer a{color:#ddd;text-decoration:none;display:block;padding:3px 0}
+  footer a:hover{color:#fff;text-decoration:underline}
+  footer .base{border-top:1px solid #2a2a2a;margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#888}
+  @media (max-width:800px){footer .cols{grid-template-columns:1fr 1fr}}
+  @media (max-width:480px){.brand-text b{font-size:18px}.brand-text span{font-size:9.5px;letter-spacing:.12em}.logo-slot{width:38px;height:38px;font-size:7px}.menu-btn{padding:7px 10px;font-size:13px}}
+  .review-banner{background:#fff7d6;color:#5a470c;font-size:13px;text-align:center;padding:7px 12px;border-bottom:1px solid #e8d48a}
+  .review-banner button{margin-left:10px;background:none;border:1px solid #b9a14f;border-radius:4px;font-size:12px;cursor:pointer;padding:2px 8px;color:#5a470c}
+  main:focus{outline:none}
+</style>
+</head>
+<body>
+
+<!-- Draft notice: remove this block once the coaching staff approves the content. -->
+<div class="review-banner" id="reviewBanner">Draft for coaching staff review. Yellow boxes mark information still to be provided.<button onclick="this.parentElement.remove()">Hide</button></div>
+
+<div class="utility"><div class="wrap">
+  <span>Lenoir-Rhyne University Athletics · Hickory, N.C.</span>
+  <span class="links" id="utilLinks"></span>
+</div></div>
+
+<header class="main"><div class="wrap">
+  <a class="brand" href="#/home" aria-label="Lenoir-Rhyne Golf home">
+    <!-- Replace this box with the official LR logo file from the university Brand Toolkit:
+         <img src="images/lr-logo.png" alt="Lenoir-Rhyne University" height="46"> -->
+    <span class="logo-slot">Official LR logo</span>
+    <span class="brand-text"><b>Lenoir-Rhyne Golf</b><span>Bears · Men's & Women's</span></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="primary" id="nav" aria-label="Main"><ul>
+    <li><a href="#/home" data-r="home">Home</a></li>
+    <li><a href="#/men" data-r="men">Men's Golf</a></li>
+    <li><a href="#/women" data-r="women">Women's Golf</a></li>
+    <li><a href="#/coaches" data-r="coaches">Coaches</a></li>
+    <li><a href="#/schedule" data-r="schedule">Schedule</a></li>
+    <li><a href="#/news" data-r="news">News</a></li>
+    <li><a href="#/gallery" data-r="gallery">Gallery</a></li>
+    <li><a href="#/recruiting" data-r="recruiting">Recruiting</a></li>
+    <li><a href="#/contact" data-r="contact">Contact</a></li>
+  </ul></nav>
+</div></header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div>
+      <h4>Lenoir-Rhyne Golf</h4>
+      <p style="margin:0 0 10px">Men's &amp; Women's Golf · <span id="fDiv"></span><br><span id="fConf"></span><br>Hickory, North Carolina</p>
+    </div>
+    <div><h4>Teams</h4>
+      <a href="#/men">Men's Golf</a><a href="#/women">Women's Golf</a><a href="#/coaches">Coaching Staff</a><a href="#/schedule">Schedule &amp; Results</a>
+    </div>
+    <div><h4>Program</h4>
+      <a href="#/news">News</a><a href="#/gallery">Photo Gallery</a><a href="#/recruiting">Recruiting</a><a href="#/contact">Contact</a>
+    </div>
+    <div><h4>Follow</h4><div id="fSocial"></div></div>
+  </div>
+  <div class="base">
+    <span>© <span id="yr"></span> Lenoir-Rhyne University Golf</span>
+    <span>Official athletics site: <a style="display:inline" href="https://lrbears.com">lrbears.com</a></span>
+  </div>
+</div></footer>
+
+<script src="content.js"></script>
+<script>
+(function(){
+  const S = window.SITE;
+  const $ = (s,el=document)=>el.querySelector(s);
+  const app = $('#app');
+  const esc = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const ph = (label) => `<span class="ph-inline">${esc(label)}</span>`;
+  const phBox = (html) => `<div class="placeholder">${html}</div>`;
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const parse = d => { const [y,m,dd] = d.split('-').map(Number); return new Date(y,m-1,dd); };
+  const today = new Date(); today.setHours(0,0,0,0);
+  const fmtRange = (a,b) => {
+    const s=parse(a), e=parse(b||a);
+    if (s.getMonth()===e.getMonth()) return `${MONTHS[s.getMonth()]} ${s.getDate()}${e.getDate()!==s.getDate()?'–'+e.getDate():''}`;
+    return `${MONTHS[s.getMonth()]} ${s.getDate()} – ${MONTHS[e.getMonth()]} ${e.getDate()}`;
+  };
+  const fmtDate = d => { const x=parse(d); return `${MONTHS[x.getMonth()]} ${x.getDate()}, ${x.getFullYear()}`; };
+  const initials = n => n.split(/\s+/).map(p=>p[0]).slice(0,2).join('').toUpperCase();
+  const YEAR_ORDER = {'Fr.':1,'So.':2,'Jr.':3,'Sr.':4,'Gr.':5};
+  const YEAR_FULL = {'Fr.':'Freshman','So.':'Sophomore','Jr.':'Junior','Sr.':'Senior','Gr.':'Graduate'};
+  const isDone = ev => parse(ev.end||ev.start) < today || !!ev.result;
+  const nextEvent = list => list.filter(e=>!isDone(e)).sort((a,b)=>parse(a.start)-parse(b.start))[0];
+  const loc = ev => [ev.course, ev.city].filter(Boolean).join(' · ') || 'Location to be announced';
+
+  /* Golf-course illustration used wherever a photo hasn't been supplied */
+  function scene(variant=0){
+    const skies=[['#d9e8ef','#f7e7cf'],['#e8d9cf','#f6efe2'],['#cfe0e8','#eef3ea']][variant%3];
+    return `<svg class="scene" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sk${variant}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${skies[0]}"/><stop offset="1" stop-color="${skies[1]}"/></linearGradient>
+        <linearGradient id="fw${variant}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f9a5b"/><stop offset="1" stop-color="#2f6b3d"/></linearGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#sk${variant})"/>
+      <path d="M0 330 C200 270 380 300 560 260 S920 230 1100 270 1450 240 1600 260 V700 H0Z" fill="#8fae9a" opacity=".55"/>
+      <path d="M0 380 C240 330 420 360 640 320 S1040 300 1240 340 1500 320 1600 330 V700 H0Z" fill="#4f7d5b"/>
+      <g fill="#24492f">${Array.from({length:22},(_,i)=>{const x=i*78+(i%3)*12,h=60+(i*37)%55;return `<ellipse cx="${x}" cy="${372-(i%4)*6}" rx="${34+(i%3)*8}" ry="${h/2}"/>`}).join('')}</g>
+      <path d="M0 470 C300 410 620 440 900 420 S1400 400 1600 430 V700 H0Z" fill="url(#fw${variant})"/>
+      <path d="M180 700 C420 560 760 500 1040 470 S1380 450 1600 460 V700Z" fill="#79b06d" opacity=".55"/>
+      <ellipse cx="1380" cy="468" rx="150" ry="26" fill="#8cc47c"/>
+      <ellipse cx="900" cy="560" rx="120" ry="20" fill="#e8dcb5"/>
+      <line x1="1400" y1="466" x2="1400" y2="330" stroke="#f4f4f4" stroke-width="4"/>
+      <path d="M1402 332 L1470 352 L1402 372Z" fill="#A41F2F"/>
+      <ellipse cx="1400" cy="467" rx="9" ry="3" fill="#123"/>
+    </svg>`;
+  }
+
+  function pageHead(crumb,title,sub){
+    return `<div class="page-head"><div class="wrap"><div class="crumb">${esc(crumb)}</div><h1>${esc(title)}</h1>${sub?`<p>${sub}</p>`:''}</div></div>`;
+  }
+
+  function eventCard(ev,team){
+    const s=parse(ev.start);
+    return `<div class="event"><div class="date"><span class="m">${MONTHS[s.getMonth()]}</span><span class="d">${s.getDate()}${ev.end&&ev.end!==ev.start?'–'+parse(ev.end).getDate():''}</span></div>
+      <div class="body"><div class="tag">${team} · Next Event</div><h4>${esc(ev.name)}</h4><div class="meta">${esc(loc(ev))}</div></div></div>`;
+  }
+
+  function newsCard(n){
+    const team={men:"Men's Golf",women:"Women's Golf",program:"Program"}[n.team]||'Program';
+    return `<article class="card news">
+      <div class="img">${n.photo?`<img src="${esc(n.photo)}" alt="">`:'Photo to be added'}</div>
+      <div class="body"><div class="cat">${team}</div><h3>${esc(n.title)}</h3>
+      <div class="date">${fmtDate(n.date)}</div>
+      <p style="margin:10px 0 0;font-size:14.5px">${esc(n.summary||'')}</p>
+      ${n.body?`<p style="font-size:14.5px">${esc(n.body)}</p>`:`<div style="margin-top:12px">${phBox('<b>Full recap to be written</b> — add the story text in <code>content.js</code>.')}</div>`}
+      </div></article>`;
+  }
+
+  /* ---------------- PAGES ---------------- */
+  const pages = {};
+
+  pages.home = () => {
+    const mNext=nextEvent(S.mensSchedule), wNext=nextEvent(S.womensSchedule);
+    const done=[...S.mensSchedule,...S.womensSchedule].filter(isDone).length;
+    const titles=[...S.mensSchedule,...S.womensSchedule].filter(e=>e.win).length;
+    const intl=new Set([...S.mensRoster,...S.womensRoster].map(p=>p.hometown.split(',').pop().trim()).filter(c=>!/^(N\.C\.|S\.C\.|NC|Va\.|Md\.|Mo\.|Ill\.|Fla\.|Tenn\.|Ga\.)$/.test(c))).size;
+    const news=[...S.news].sort((a,b)=>parse(b.date)-parse(a.date)).slice(0,3);
+    return `
+    <section class="hero">
+      ${S.program.heroPhoto?`<img class="photo" src="${esc(S.program.heroPhoto)}" alt="Lenoir-Rhyne golf">`:scene(0)+'<span class="photo-note">Placeholder art — replace with a team photo</span>'}
+      <div class="wrap">
+        <span class="eyebrow">${esc(S.season)} Season</span>
+        <h1>Lenoir-Rhyne <em>Golf</em></h1>
+        <p class="lead">Men's and women's golf at Lenoir-Rhyne University, competing in ${esc(S.program.division)} and the ${esc(S.program.conference)} from Hickory, North Carolina.</p>
+        <div class="btns"><a class="btn red" href="#/schedule">Schedule &amp; Results</a><a class="btn ghost" href="#/recruiting">Future Bears</a></div>
+      </div>
+    </section>
+
+    <div class="strip"><div class="wrap">
+      <div class="stat"><div class="num">${S.mensRoster.length+S.womensRoster.length}</div><div class="lab">Student-athletes</div></div>
+      <div class="stat"><div class="num">${intl+1}</div><div class="lab">Countries represented</div></div>
+      <div class="stat"><div class="num">${done}</div><div class="lab">Events completed</div></div>
+      <div class="stat"><div class="num">${titles}</div><div class="lab">Team titles this season</div></div>
+    </div></div>
+
+    <section class="block"><div class="wrap">
+      <div class="sec-title"><h2>Our Teams</h2></div>
+      <div class="grid g2">
+        <a class="team-tile" href="#/men"><div class="bg">${scene(1)}</div><div class="txt"><h3>Men's Golf</h3><p>${S.mensRoster.length} players · ${S.season} roster, schedule and results</p><span class="go">View team →</span></div></a>
+        <a class="team-tile" href="#/women"><div class="bg">${scene(2)}</div><div class="txt"><h3>Women's Golf</h3><p>${S.womensRoster.length} players · ${S.season} roster, schedule and results</p><span class="go">View team →</span></div></a>
+      </div>
+    </div></section>
+
+    <section class="block white"><div class="wrap">
+      <div class="sec-title"><h2>Up Next</h2><a href="#/schedule">Full schedule →</a></div>
+      <div class="grid g2">
+        ${mNext?eventCard(mNext,"Men's Golf"):phBox("No upcoming men's events listed.")}
+        ${wNext?eventCard(wNext,"Women's Golf"):phBox("No upcoming women's events listed.")}
+      </div>
+    </div></section>
+
+    <section class="block"><div class="wrap">
+      <div class="sec-title"><h2>Latest News</h2><a href="#/news">All news →</a></div>
+      <div class="grid g3">${news.map(newsCard).join('')}</div>
+    </div></section>
+
+    <section class="block white"><div class="wrap split">
+      <div>
+        <div class="sec-title" style="margin-bottom:14px"><h2>The Program</h2></div>
+        ${S.program.overview?`<p>${esc(S.program.overview)}</p>`:phBox('<b>Program overview to be provided by the coaching staff.</b> A short welcome describing the program\'s philosophy, facilities and history will appear here.')}
+        <ul class="ticks">
+          <li>Men's and women's teams under one coaching staff</li>
+          <li>${esc(S.program.division)} · ${esc(S.program.conference)}</li>
+          <li>Student-athletes from ${intl+1} countries on the ${esc(S.season)} rosters</li>
+        </ul>
+        <a class="btn dark" href="#/coaches">Meet the Coaches</a>
+      </div>
+      <div class="card" style="position:relative;aspect-ratio:4/3">${scene(2)}<span class="photo-note">Team photo placeholder</span></div>
+    </div></section>
+
+    <div class="cta-band"><div class="wrap">
+      <div><h2>Interested in Lenoir-Rhyne Golf?</h2><p>Prospective student-athletes can learn about the program and reach the coaching staff.</p></div>
+      <a class="btn dark" href="#/recruiting">Recruiting Information</a>
+    </div></div>`;
+  };
+
+  function rosterPage(team){
+    const men = team==='men';
+    const roster = men?S.mensRoster:S.womensRoster;
+    const sched = men?S.mensSchedule:S.womensSchedule;
+    const label = men?"Men's Golf":"Women's Golf";
+    const nx = nextEvent(sched);
+    const recent = sched.filter(e=>e.result).slice(-3).reverse();
+    setTimeout(()=>bindRoster(roster),0);
+    return `${pageHead('Lenoir-Rhyne Bears',label,`${esc(S.season)} roster · ${roster.length} student-athletes`)}
+    <section class="block white" style="padding:36px 0"><div class="wrap grid g2">
+      <div>${nx?eventCard(nx,label):phBox('No upcoming events listed.')}</div>
+      <div class="card" style="padding:18px 20px">
+        <div class="tag" style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)">Recent Results</div>
+        ${recent.map(e=>`<div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px"><span><b>${esc(e.name)}</b>${e.win?'<span class="badge win">Champions</span>':''}</span><span style="white-space:nowrap">${esc(e.result)}</span></div>`).join('')}
+        <a href="#/schedule/${team}" style="display:inline-block;margin-top:10px;font-weight:600;font-size:14px">Full schedule &amp; results →</a>
+      </div>
+    </div></section>
+    <section class="block"><div class="wrap">
+      <div class="sec-title"><h2>${S.season} Roster</h2></div>
+      <div class="toolbar">
+        <input id="q" type="search" placeholder="Search by name or hometown" aria-label="Search roster">
+        ${['All','Fr.','So.','Jr.','Sr.','Gr.'].filter(y=>y==='All'||roster.some(p=>p.year===y)).map((y,i)=>`<button class="chip ${i?'':'on'}" data-y="${y}">${y==='All'?'All':YEAR_FULL[y]}</button>`).join('')}
+        <div class="viewtog"><button class="on" data-v="cards">Cards</button><button data-v="table">Table</button></div>
+      </div>
+      <div id="rosterOut"></div>
+    </div></section>`;
+  }
+  function bindRoster(roster){
+    let y='All', q='', v='cards';
+    const out=$('#rosterOut');
+    const draw=()=>{
+      const list=roster.filter(p=>(y==='All'||p.year===y)&&(p.name+' '+p.hometown+' '+p.school).toLowerCase().includes(q)).sort((a,b)=>a.name.split(' ').slice(-1)[0].localeCompare(b.name.split(' ').slice(-1)[0]));
+      if(!list.length){out.innerHTML='<p>No players match.</p>';return;}
+      out.innerHTML = v==='cards'
+        ? `<div class="grid g4">${list.map(p=>`<article class="card player">
+            <div class="ph">${p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}">`:`<span class="ini">${initials(p.name)}</span><span class="tag">Headshot to be added</span>`}<span class="yr">${esc(p.year)}</span></div>
+            <div class="info"><h3>${esc(p.name)}</h3><dl>
+              <dt>Year</dt><dd>${esc(YEAR_FULL[p.year]||p.year)}</dd>
+              <dt>Hometown</dt><dd>${esc(p.hometown)}</dd>
+              <dt>School</dt><dd>${esc(p.school)}</dd>
+              <dt>Major</dt><dd>${p.major?esc(p.major):ph('To be added')}</dd>
+            </dl></div></article>`).join('')}</div>`
+        : `<div class="tablewrap"><table class="data"><thead><tr><th>Name</th><th>Year</th><th>Hometown</th><th>High School / Previous School</th><th>Major</th></tr></thead><tbody>
+            ${list.map(p=>`<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.year)}</td><td>${esc(p.hometown)}</td><td>${esc(p.school)}</td><td>${p.major?esc(p.major):ph('To be added')}</td></tr>`).join('')}
+           </tbody></table></div>`;
+    };
+    $('#q').addEventListener('input',e=>{q=e.target.value.toLowerCase();draw();});
+    document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');y=c.dataset.y;draw();});
+    document.querySelectorAll('.viewtog button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.viewtog button').forEach(x=>x.classList.remove('on'));b.classList.add('on');v=b.dataset.v;draw();});
+    draw();
+  }
+  pages.men = () => rosterPage('men');
+  pages.women = () => rosterPage('women');
+
+  pages.coaches = () => `${pageHead('Lenoir-Rhyne Golf','Coaching Staff','One staff leads both the men\'s and women\'s programs.')}
+    <section class="block"><div class="wrap grid" style="gap:26px">
+      ${S.coaches.map(c=>`<article class="card coach">
+        <div class="ph">${c.photo?`<img src="${esc(c.photo)}" alt="${esc(c.name)}" style="width:100%;height:100%;object-fit:cover">`:`<span class="ini">${initials(c.name)}</span><span class="tag">Photo to be added</span>`}</div>
+        <div class="info"><h3>${esc(c.name)}</h3><div class="title">${esc(c.title)}</div>
+          <p style="margin:0 0 4px"><b>Email:</b> <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>
+          <p style="margin:0 0 14px"><b>Phone:</b> ${c.phone?esc(c.phone):ph('To be added')}</p>
+          ${c.bio?`<p>${esc(c.bio)}</p>`:phBox('<b>Biography to be provided.</b> Official bio, years at Lenoir-Rhyne and coaching background will appear here after staff review.')}
+          ${c.background?`<p><b>Background:</b> ${esc(c.background)}</p>`:''}
+        </div></article>`).join('')}
+    </div></section>`;
+
+  pages.schedule = (team='men') => {
+    setTimeout(()=>{
+      document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{location.hash='#/schedule/'+b.dataset.t;});
+    },0);
+    const list=(team==='women'?S.womensSchedule:S.mensSchedule).slice().sort((a,b)=>parse(a.start)-parse(b.start));
+    const nx=nextEvent(list);
+    const done=list.filter(isDone), up=list.filter(e=>!isDone(e));
+    const row=e=>{
+      const cls=e.win?'win':isDone(e)?'done':(e===nx?'next':'');
+      return `<div class="sched-row ${cls}">
+        <div class="when">${fmtRange(e.start,e.end)}<small>${parse(e.start).getFullYear()}</small></div>
+        <div><h4>${esc(e.name)}${e.home?'<span class="badge home">Home</span>':''}${e.win?'<span class="badge win">Champions</span>':''}${e===nx?'<span class="badge next">Next</span>':''}</h4>
+          <div class="meta">${e.course||e.city?esc(loc(e)):ph('Location to be announced')}${' · Host: '}${e.host?esc(e.host):ph('To be confirmed')}</div></div>
+        <div class="res">${e.result?`<small>Team finish</small>${esc(e.result)}`:`<small>Result</small><span style="color:var(--muted);font-weight:500">Upcoming</span>`}</div>
+      </div>`;
+    };
+    return `${pageHead('Lenoir-Rhyne Golf','Schedule & Results',`${esc(S.season)} season`)}
+    <section class="block"><div class="wrap">
+      <div class="tabs" role="tablist"><button data-t="men" class="${team==='men'?'on':''}">Men's Golf</button><button data-t="women" class="${team==='women'?'on':''}">Women's Golf</button></div>
+      ${up.length?`<div class="group-h">Upcoming</div>${up.map(row).join('')}`:''}
+      ${done.length?`<div class="group-h">Completed</div>${done.slice().reverse().map(row).join('')}`:''}
+      <p style="font-size:13px;color:var(--muted);margin-top:24px">Live scoring and official results: <a href="${esc(team==='women'?S.program.womensOfficialPage:S.program.mensOfficialPage)}/schedule">lrbears.com</a></p>
+    </div></section>`;
+  };
+
+  pages.news = () => {
+    const items=[...S.news].sort((a,b)=>parse(b.date)-parse(a.date));
+    return `${pageHead('Lenoir-Rhyne Golf','News & Updates','Tournament recaps, announcements and program achievements.')}
+    <section class="block"><div class="wrap">
+      <div class="grid g3">${items.map(newsCard).join('')}</div>
+      <p style="margin-top:28px;font-size:14px;color:var(--muted)">Story archives: <a href="${esc(S.program.mensOfficialPage)}/archives">Men's</a> · <a href="${esc(S.program.womensOfficialPage)}/archives">Women's</a> on lrbears.com</p>
+    </div></section>`;
+  };
+
+  pages.gallery = () => {
+    const g=S.gallery||[];
+    const tiles = g.length
+      ? g.map((p,i)=>`<figure class="tile ${i===0?'big':''}" style="margin:0;border:0"><img src="${esc(p.src)}" alt="${esc(p.caption||'')}" title="${esc(p.caption||'')}"></figure>`).join('')
+      : ['Team photo','Tournament action','Practice session','Home course','Signing day','Team travel','Awards','Behind the scenes','Women\'s team','Men\'s team'].map((t,i)=>`<div class="tile ${i===0?'big':''}">${t}<br>photo placeholder</div>`).join('');
+    return `${pageHead('Lenoir-Rhyne Golf','Photo Gallery','Team photos, tournaments, practice and moments from the season.')}
+    <section class="block"><div class="wrap">
+      ${g.length?'':`<div style="margin-bottom:20px">${phBox('<b>No photos added yet.</b> Add approved images to the <code>gallery</code> list in <code>content.js</code> and they will replace these tiles.')}</div>`}
+      <div class="gal">${tiles}</div>
+    </div></section>`;
+  };
+
+  pages.recruiting = () => {
+    const R=S.recruiting;
+    const mainCoach=S.coaches[0];
+    const intl=new Set([...S.mensRoster,...S.womensRoster].map(p=>p.hometown.split(',').pop().trim()).filter(c=>!/^(N\.C\.|S\.C\.|NC|Va\.|Md\.|Mo\.|Ill\.|Fla\.|Tenn\.|Ga\.)$/.test(c))).size;
+    return `${pageHead('Future Bears','Recruiting','Information for prospective student-athletes and their families.')}
+    <section class="block white"><div class="wrap split">
+      <div>
+        <div class="sec-title" style="margin-bottom:14px"><h2>Why Lenoir-Rhyne Golf</h2></div>
+        ${R.intro?`<p>${esc(R.intro)}</p>`:phBox('<b>Recruiting message to be provided by the coaching staff</b> — program philosophy, practice facilities, academics and what the coaches look for in a recruit.')}
+        <ul class="ticks">
+          <li>${esc(S.program.division)}, ${esc(S.program.conference)}</li>
+          <li>Full fall and spring tournament schedules for both teams</li>
+          <li>Rosters with players from across the U.S. and ${intl} other countries</li>
+          <li>Based in ${esc(S.program.location)}</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:28px">
+        <h3 style="font-size:26px">Start the conversation</h3>
+        <p>Send the coaching staff an introduction with your graduation year, tournament results or scoring average, upcoming schedule and swing video link.</p>
+        <div class="btns" style="margin:18px 0">
+          <a class="btn red" href="mailto:${esc(R.contactEmail)}?subject=${encodeURIComponent('Prospective Student-Athlete — Lenoir-Rhyne Golf')}">Email the Coaching Staff</a>
+          ${R.questionnaireUrl?`<a class="btn outline" href="${esc(R.questionnaireUrl)}">Recruiting Questionnaire</a>`:''}
+        </div>
+        ${R.questionnaireUrl?'':phBox('<b>Recruiting questionnaire link to be added.</b>')}
+      </div>
+    </div></section>
+    <section class="block"><div class="wrap">
+      <div class="sec-title"><h2>Helpful Links</h2></div>
+      <div class="grid g3">
+        <a class="card" style="padding:22px;text-decoration:none;color:inherit" href="#/schedule"><h3 style="font-size:20px">Schedules</h3><p style="margin:0;color:var(--muted)">See where both teams compete this season.</p></a>
+        <a class="card" style="padding:22px;text-decoration:none;color:inherit" href="#/men"><h3 style="font-size:20px">Current Rosters</h3><p style="margin:0;color:var(--muted)">Meet the men's and women's teams.</p></a>
+        <div class="card" style="padding:22px"><h3 style="font-size:20px">Admissions &amp; Eligibility</h3>${phBox('Links to LR admissions, financial aid and NCAA eligibility pages to be added.')}</div>
+      </div>
+    </div></section>`;
+  };
+
+  pages.contact = () => `${pageHead('Lenoir-Rhyne Golf','Contact','Reach the coaching staff or follow the Bears.')}
+    <section class="block"><div class="wrap grid g2">
+      <div>
+        <div class="sec-title"><h2>Coaching Staff</h2></div>
+        ${S.coaches.map(c=>`<div class="card" style="padding:20px 22px;margin-bottom:14px">
+          <h3 style="font-size:22px;margin:0">${esc(c.name)}</h3><div style="color:var(--lr-red);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:4px 0 10px">${esc(c.title)}</div>
+          <div><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div><div>${c.phone?esc(c.phone):ph('Phone to be added')}</div></div>`).join('')}
+        <div class="card" style="padding:20px 22px"><h3 style="font-size:20px;margin:0 0 8px">Mailing Address</h3>${phBox('Official golf office mailing address to be added.')}</div>
+      </div>
+      <div>
+        <div class="sec-title"><h2>Official Links</h2></div>
+        <div class="card" style="padding:20px 22px;margin-bottom:14px">
+          <p style="margin:0 0 6px"><a href="${esc(S.program.athleticsSite)}">Lenoir-Rhyne Athletics (lrbears.com)</a></p>
+          <p style="margin:0 0 6px"><a href="${esc(S.program.mensOfficialPage)}">Men's Golf on lrbears.com</a></p>
+          <p style="margin:0"><a href="${esc(S.program.womensOfficialPage)}">Women's Golf on lrbears.com</a></p>
+        </div>
+        <div class="sec-title" style="margin-top:28px"><h2>Social Media</h2></div>
+        <div class="card" style="padding:20px 22px">${S.social.map(s=>`<p style="margin:0 0 6px"><a href="${esc(s.url)}">${esc(s.label)}</a></p>`).join('')}</div>
+      </div>
+    </div></section>`;
+
+  /* ---------------- ROUTER ---------------- */
+  function route(){
+    const [, r='home', sub] = (location.hash||'#/home').split('/');
+    const fn = pages[r] || pages.home;
+    app.innerHTML = fn(sub);
+    document.querySelectorAll('nav.primary a').forEach(a=>a.classList.toggle('active',a.dataset.r===(pages[r]?r:'home')));
+    $('#nav').classList.remove('open'); $('#menuBtn').setAttribute('aria-expanded','false');
+    window.scrollTo(0,0);
+    document.title = (r==='home'?'':(document.querySelector(`nav a[data-r="${r}"]`)?.textContent+' | '))+'Lenoir-Rhyne Golf';
+  }
+  $('#menuBtn').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o);};
+  $('#yr').textContent=new Date().getFullYear();
+  $('#fDiv').textContent=S.program.division; $('#fConf').textContent=S.program.conference;
+  $('#fSocial').innerHTML=S.social.map(s=>`<a href="${esc(s.url)}">${esc(s.label)}</a>`).join('');
+  $('#utilLinks').innerHTML=`<a href="${esc(S.program.athleticsSite)}">LR Athletics</a><a href="https://x.com/BearsLRGolf">X</a><a href="https://instagram.com/lrubearsgolf">Instagram</a>`;
+  window.addEventListener('hashchange',route);
+  route();
+})();
+</script>
+</body>
+</html>

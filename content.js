@@ -23,7 +23,7 @@ window.SITE = {
     conference: "South Atlantic Conference (SAC)",
     division: "NCAA Division II",
     // PLACEHOLDER — coaches to write the official program overview.
-    overview: "Lenoir-Rhyne University is home to both men's and women's NCAA Division II golf teams competing in the South Atlantic Conference (SAC). Based in Hickory, North Carolina, the Bears focus on developing talented student-athletes who value teamwork, dedication, sportsmanship, and academic sucess. Both programs compete in tournaments across the country while representing LR with pride ",
+    overview: "Lenoir-Rhyne University is home to both men's and women's NCAA Division II golf teams competing in the South Atlantic Conference (SAC). Based in Hickory, North Carolina, the Bears focus on developing talented student-athletes who value teamwork, dedication, sportsmanship, and academic success. Both programs compete in tournaments across the country while representing LR with pride ",
     athleticsSite: "https://lrbears.com",
     mensOfficialPage: "https://lrbears.com/sports/mens-golf",
     womensOfficialPage: "https://lrbears.com/sports/womens-golf",

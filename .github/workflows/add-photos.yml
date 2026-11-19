@@ -1,0 +1,51 @@
+# Automatically turns photos uploaded to photos-to-add/ into roster headshots.
+# Upload a photo named after the person (e.g. "Eve Neild.jpg") and commit.
+# Within about a minute it appears on the site, cropped and sized to match.
+name: Add roster photos
+
+on:
+  push:
+    paths:
+      - "photos-to-add/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: add-photos
+  cancel-in-progress: false
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install image tools
+        run: pip install pillow pillow-heif
+
+      - name: Crop, resize and rename photos
+        run: python .github/scripts/process_photos.py
+
+      - name: Save to the website
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add -A images photos-to-add
+          if git diff --cached --quiet; then
+            echo "Nothing to save."
+          else
+            git commit -m "Add roster photos"
+            git push
+          fi
+
+      - name: Refresh the live site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages will refresh on its own."

@@ -252,8 +252,12 @@ window.SITE = {
   gallery: [],
 
   recruiting: {
-    // PLACEHOLDERS — coaches to supply official recruiting text and links.
-    intro: "",
+    // intro: list of paragraphs. questionnaireUrl: link to the recruiting questionnaire.
+    intro: [
+      "At Lenoir-Rhyne University, we are committed to building a competitive golf program that values hard work, teamwork, discipline, and personal growth. Our goal is to help every player improve on and off the course while competing at a high level.",
+      "We also take pride in our strong academic environment, where student-athletes are supported in reaching their educational and career goals.",
+      "We look for recruits who are dedicated, coachable, competitive, and willing to be part of a team. Most importantly, we want players who bring a positive attitude, strong work ethic, and a desire to represent Lenoir-Rhyne with pride.",
+    ],
     questionnaireUrl: "",
     contactEmail: "Christopher.Jones@lr.edu",
   },

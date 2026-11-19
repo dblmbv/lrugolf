@@ -618,7 +618,7 @@
     <section class="block white"><div class="wrap split">
       <div>
         <div class="sec-title" style="margin-bottom:14px"><h2>Why Lenoir-Rhyne Golf</h2></div>
-        ${R.intro?`<p>${esc(R.intro)}</p>`:phBox('<b>Recruiting message to be provided by the coaching staff</b> — program philosophy, practice facilities, academics and what the coaches look for in a recruit.')}
+        ${[].concat(R.intro||[]).length?[].concat(R.intro).map(x=>`<p>${esc(x)}</p>`).join(''):phBox('<b>Recruiting message to be provided by the coaching staff</b> — program philosophy, practice facilities, academics and what the coaches look for in a recruit.')}
         <ul class="ticks">
           <li>${esc(S.program.division)}, ${esc(S.program.conference)}</li>
           <li>Full fall and spring tournament schedules for both teams</li>

@@ -101,7 +101,7 @@ window.SITE = {
         "2025-26 (Sophomore): Competed at the King Invitational.",
         "2024-25 (Freshman): Competed at the LR Fall Invitational.",
     ] },
-    { name: "Stanislaus Koch",    year: "Jr.", hometown: "Vienna, Austria",        school: "Schottengymnasium der Benediktiner", major: "", height: "", photo: "images/stanislaus-koch.jpg", bio: [
+    { name: "Stanislaus Koch",    year: "Jr.", hometown: "Vienna, Austria",        school: "Schottengymnasium der Benediktiner", major: "Finance", height: "", photo: "images/stanislaus-koch.jpg", bio: [
         "2025-26 (Sophomore): Played seven events with a 76.4 adjusted scoring average. Tied for 20th at The Trojan (226, +10). Finished the year ranked #194 in the region.",
         "2024-25 (Freshman): Played three events with a 75.5 adjusted scoring average. Finished 29th of 93 at the LR Fall Invitational.",
     ] },

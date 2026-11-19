@@ -204,11 +204,49 @@ window.SITE = {
 
   /* ---------- NEWS ----------
      team: "men", "women", or "program". Newest items are shown first.
-     body: "" shows a "story to be written" placeholder.            */
+     body: a list of paragraphs (the full recap). Each paragraph in quotes, followed by a comma.
+     source: link to the official story on lrbears.com.                                   */
   news: [
-    { date: "2026-10-27", team: "women", title: "Women's golf finishes 2nd of 13 at D2 Curahee Elite Invitational", summary: "Team result from Toccoa, Ga. (The Curahee Club).", body: "", photo: "" },
-    { date: "2026-10-27", team: "men",   title: "Men's golf places 2nd of 15 at home LR Fall Invitational",       summary: "Team result from Lake Hickory at Catawba Springs, Hickory, N.C.", body: "", photo: "" },
-    { date: "2026-09-29", team: "men",   title: "Men's golf wins Wolves Fall Intercollegiate",                    summary: "Bears take the team title, 1st of 9 teams, in Lancaster, S.C.", body: "", photo: "" },
+    { date: "2026-10-29", team: "women", title: "Women's golf closes the fall ranked 26th; Eve Neild 23rd individually",
+      summary: "After four top-10 finishes and a runner-up showing, the Bears are ranked 26th nationally in the Clippd fall rankings.",
+      body: [
+        "The Lenoir-Rhyne women's golf team finished the fall ranked 26th in the Clippd rankings after posting four top-10 finishes, including a runner-up finish to close the semester. The Bears are 14th in the South Region, one of the toughest regions in the country, and are the third-highest ranked SAC team behind national powers Anderson (#5) and Lincoln Memorial (#8).",
+        "The highlight came at the Currahee D2 Elite Invitational, where Lenoir-Rhyne faced 10 of the nation's top-50 teams and rallied with a 2-under-par final round to climb seven spots and finish second.",
+        "Senior Eve Neild is ranked 23rd in the nation and 11th in the South Region, the second-highest ranked SAC individual. Neild, an NCAA Regional qualifier last season, has three top-three finishes this fall and has broken par in six of her 15 rounds, including a school-record 66 at the Currahee D2 Elite Invitational. At the LeeAnn Noble Memorial, she was the only player in the field to break par in all three rounds.",
+      ],
+      photo: "", source: "https://lrbears.com/news/2026/10/29/womens-golf-closes-the-fall-ranked-26th-eve-neild-ranked-23rd-individually.aspx" },
+
+    { date: "2026-10-27", team: "women", title: "Bears storm back to finish 2nd at Currahee D2 Elite Invitational",
+      summary: "Eve Neild's school-record 66 powers a seven-spot final-round climb in Toccoa, Ga.",
+      body: [
+        "The Lenoir-Rhyne women's golf team closed its fall season with a runner-up finish at the Currahee D2 Elite Invitational in Toccoa, Ga., one of the strongest fields in the country, with 10 of the 13 teams ranked in the national top 50. Anderson won the event.",
+        "The Bears jumped seven spots in the final round, shooting 286 (-2). Lenoir-Rhyne was the only team in the field to post an under-par round.",
+        "Senior Eve Neild led the way with a school-record 66 in the final round, playing her last 14 holes in seven under par. She tied for third at 217 (+1) after rounds of 75-76-66.",
+        "Senior Charlotte Colley tied for 26th (76-78-73, 227), and sophomore Emily Gilmour tied for 35th (78-78-75, 231). Freshman Kajsa Hederas closed with a 72 to tie for 40th (80-81-72, 233), and senior Danielle Bekker tied for 42nd (81-69-84, 234), with her second-round 69 the best of her tournament.",
+        "Up next: the Bears return in mid-February at the Battle of Hilton Head.",
+      ],
+      photo: "", source: "https://lrbears.com/news/2026/10/27/womens-golf-bears-storm-back-in-final-round-to-take-second-at-currahee-d2-elite-invitational.aspx" },
+
+    { date: "2026-10-27", team: "men", title: "Men's golf earns runner-up finish at home LR Fall Invitational",
+      summary: "Freshman David Quinones takes second individually in his collegiate debut at Lake Hickory.",
+      body: [
+        "Lenoir-Rhyne finished second at its own LR Fall Invitational in Hickory, N.C., posting a three-round 866 (296-282-288, +2), just two strokes behind champion Carson-Newman (864, E). The Bears also entered B and C teams, which finished tied for fourth and 14th.",
+        "Freshman David Quinones was runner-up individually in his first collegiate tournament, carding 72-72-70 for a 214 (-2), one shot behind medalist Dylan Frein of Carson-Newman.",
+        "Stanislaus Koch (B team) tied for fifth at 216 (E), and David Gee (B) tied for eighth at 217 (+1). Flynn Lewis tied for 10th at 218 (+2), and Brady McIntyre and Archie Mathers tied for 13th at 219 (+3). Nicklaus Newton and Jared Myers (B) tied for 20th at 221 (+5).",
+        "The A team led the field in par-4 scoring (4.11) and tied for the lead on par-5s (4.77, -14), and the Lenoir-Rhyne squads combined for a field-best 53 birdies. Quinones, Johnny Malinowski, Adam Gregg and Lewis each made an eagle.",
+        "Up next: the fall season is complete. The Bears return in early February at the Lincoln Memorial Spring Kick-off.",
+      ],
+      photo: "", source: "https://lrbears.com/news/2026/10/27/mens-golf-earns-runner-up-honors-at-lenoir-rhyne-fall-invitational.aspx" },
+
+    { date: "2026-09-29", team: "men", title: "Men's golf wins Wolves Fall Intercollegiate; David Gee sets school record",
+      summary: "The Bears win by 20 strokes, and freshman David Gee's 63 sets a program record and ties the course record.",
+      body: [
+        "Lenoir-Rhyne won the team title at the Wolves Fall Intercollegiate in Lancaster, S.C., the second victory of the Chris Jones era. The Bears were the only team under par in all three rounds, going 283-287-282 for an 852 (-12) to beat host Newberry by 20 strokes.",
+        "Freshman David Gee opened with a 63 (-9) at Edgewater Golf Course, a new Lenoir-Rhyne school record that also tied the course record. His round included eight birdies, an eagle on the par-5 17th and just one bogey, and he finished with eagle-birdie-birdie.",
+        "Three Bears finished in the top 10. Freshman Flynn Lewis placed fourth at 212 (-4) for his second top-five of the season, sophomore Nicklaus Newton tied for fifth at 213 (-3), and freshman Brady McIntyre was ninth at 218 (+2). Gee tied for 12th (221), and senior Archie Mathers tied for 14th (223).",
+        "The Bears led the field in par-3, par-4 and par-5 scoring, made the most birdies (60) and had the fewest bogeys (48). Newton was the field's best par-3 scorer (2.83).",
+      ],
+      photo: "", source: "https://lrbears.com/news/2026/9/29/mens-golf-wins-team-title-at-wolves-fall-intercollegiate.aspx" },
   ],
 
   /* ---------- PHOTO GALLERY ----------

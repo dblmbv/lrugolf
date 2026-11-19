@@ -255,6 +255,12 @@
   .modal ul.bio li{margin-bottom:8px}
   .modal .close{position:absolute;top:10px;right:12px;z-index:3;background:#fff;border:0;border-radius:50%;width:36px;height:36px;font-size:22px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.3)}
   @media (max-width:700px){.modal .box{grid-template-columns:1fr}.modal .ph{min-height:300px}}
+  .readmore{margin-top:14px;background:none;border:0;padding:0 0 2px;border-bottom:2px solid var(--lr-red);color:var(--lr-red);font-family:var(--head);text-transform:uppercase;letter-spacing:.08em;font-size:14px;cursor:pointer}
+  .modal .box.story{display:block;max-width:760px}
+  .modal .box.story .story-img{width:100%;max-height:380px;object-fit:cover}
+  .modal .box.story h2{font-size:30px;text-transform:none;margin:4px 0 16px}
+  .modal .box.story p{font-size:16px;line-height:1.65;margin:0 0 14px}
+  .modal .box.story .src{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:20px}
   .review-banner{background:#fff7d6;color:#5a470c;font-size:13px;text-align:center;padding:7px 12px;border-bottom:1px solid #e8d48a}
   .review-banner button{margin-left:10px;background:none;border:1px solid #b9a14f;border-radius:4px;font-size:12px;cursor:pointer;padding:2px 8px;color:#5a470c}
   main:focus{outline:none}
@@ -381,9 +387,26 @@
       <div class="body"><div class="cat">${team}</div><h3>${esc(n.title)}</h3>
       <div class="date">${fmtDate(n.date)}</div>
       <p style="margin:10px 0 0;font-size:14.5px">${esc(n.summary||'')}</p>
-      ${n.body?`<p style="font-size:14.5px">${esc(n.body)}</p>`:`<div style="margin-top:12px">${phBox('<b>Full recap to be written</b> — add the story text in <code>content.js</code>.')}</div>`}
+      ${[].concat(n.body||[]).length?`<button class="readmore" data-story="${S.news.indexOf(n)}">Read full recap →</button>`:`<div style="margin-top:12px">${phBox('<b>Full recap to be written</b> — add the story text in <code>content.js</code>.')}</div>`}
       </div></article>`;
   }
+
+  function openStory(n){
+    if(!n) return;
+    const team={men:"Men's Golf",women:"Women's Golf",program:"Program"}[n.team]||'Program';
+    const m=document.createElement('div'); m.className='modal'; m.setAttribute('role','dialog'); m.setAttribute('aria-modal','true');
+    m.innerHTML=`<div class="box story"><button class="close" aria-label="Close">×</button>
+      ${n.photo?`<img class="story-img" src="${esc(n.photo)}" alt="" onerror="this.remove()">`:''}
+      <div class="info"><div class="sub">${team} · ${fmtDate(n.date)}</div><h2>${esc(n.title)}</h2>
+      ${[].concat(n.body||[]).map(x=>`<p>${esc(x)}</p>`).join('')}
+      ${n.source?`<p class="src">Official story: <a href="${esc(n.source)}" target="_blank" rel="noopener">lrbears.com</a></p>`:''}</div></div>`;
+    const close=()=>{m.remove();document.removeEventListener('keydown',onKey);};
+    const onKey=e=>{if(e.key==='Escape')close();};
+    m.onclick=e=>{if(e.target===m||e.target.classList.contains('close'))close();};
+    document.addEventListener('keydown',onKey);
+    document.body.appendChild(m); m.querySelector('.close').focus();
+  }
+  document.addEventListener('click',e=>{const b=e.target.closest('.readmore');if(b)openStory(S.news[+b.dataset.story]);});
 
   function openPlayer(p){
     if(!p) return;

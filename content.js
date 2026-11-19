@@ -114,7 +114,7 @@ window.SITE = {
         "2023-24: Tied for 43rd at the LR Fall Invitational (238, +22).",
     ] },
     { name: "Johnny Malinowski",  year: "Fr.", hometown: "California, Md.",        school: "Leonardtown HS",                     major: "Engineering Physics", height: "", photo: "images/johnny-malinowski.jpg", bio: [] },
-    { name: "Archie Mathers",     year: "Sr.", hometown: "Hertfordshire, UK",      school: "Bedford School",                     major: "", height: "", photo: "images/archie-mathers.jpg", bio: [
+    { name: "Archie Mathers",     year: "Sr.", hometown: "Hertfordshire, UK",      school: "Bedford School",                     major: "Business Management", height: "", photo: "images/archie-mathers.jpg", bio: [
         "2025-26 (Junior): Played seven events with a 75.3 adjusted scoring average. Posted two top-20 finishes, including a tie for 14th at The Trojan (223, +7). Placed 42nd at the SAC Championships. Finished the year ranked #142 in the region.",
         "2024-25 (Sophomore): Competed at the Bearcat Fall Invite and the LR Fall Invitational.",
         "2023-24 (Freshman): Finished 41st at the LR Fall Invitational.",

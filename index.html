@@ -261,6 +261,8 @@
   .modal .box.story h2{font-size:30px;text-transform:none;margin:4px 0 16px}
   .modal .box.story p{font-size:16px;line-height:1.65;margin:0 0 14px}
   .modal .box.story .src{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:20px}
+  .coach .ph{align-self:start;aspect-ratio:4/5;min-height:0}
+  @media (max-width:640px){.coach .ph{max-height:420px;width:100%}}
   .review-banner{background:#fff7d6;color:#5a470c;font-size:13px;text-align:center;padding:7px 12px;border-bottom:1px solid #e8d48a}
   .review-banner button{margin-left:10px;background:none;border:1px solid #b9a14f;border-radius:4px;font-size:12px;cursor:pointer;padding:2px 8px;color:#5a470c}
   main:focus{outline:none}
@@ -555,8 +557,8 @@
       ${S.coaches.map(c=>`<article class="card coach">
         <div class="ph"><span class="ini">${initials(c.name)}</span><span class="tag">Photo to be added</span>${photoTag(c.photo,c.name)}</div>
         <div class="info"><h3>${esc(c.name)}</h3><div class="title">${esc(c.title)}</div>
-          <p style="margin:0 0 4px"><b>Email:</b> <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>
-          <p style="margin:0 0 14px"><b>Phone:</b> ${c.phone?esc(c.phone):ph('To be added')}</p>
+          <p style="margin:0 0 14px"><b>Email:</b> <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>
+
           ${(c.bio&&c.bio.length)?[].concat(c.bio).map(x=>`<p>${esc(x)}</p>`).join(''):phBox('<b>Biography to be provided.</b>')}
           ${(c.background&&c.background.length)?`<h4 style="font-size:16px;letter-spacing:.1em;color:var(--muted);margin-top:18px">Background</h4><ul style="padding-left:18px;margin:0">${[].concat(c.background).map(x=>`<li style="margin-bottom:6px">${esc(x)}</li>`).join('')}</ul>`:''}
         </div></article>`).join('')}
@@ -650,7 +652,7 @@
         <div class="sec-title"><h2>Coaching Staff</h2></div>
         ${S.coaches.map(c=>`<div class="card" style="padding:20px 22px;margin-bottom:14px">
           <h3 style="font-size:22px;margin:0">${esc(c.name)}</h3><div style="color:var(--lr-red);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:4px 0 10px">${esc(c.title)}</div>
-          <div><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div><div>${c.phone?esc(c.phone):ph('Phone to be added')}</div></div>`).join('')}
+          <div><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div></div>`).join('')}
         <div class="card" style="padding:20px 22px"><h3 style="font-size:20px;margin:0 0 8px">Mailing Address</h3>${phBox('Official golf office mailing address to be added.')}</div>
       </div>
       <div>

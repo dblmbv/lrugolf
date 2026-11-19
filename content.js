@@ -45,7 +45,6 @@ window.SITE = {
       name: "Chris Jones",
       title: "Head Men's & Women's Golf Coach",
       email: "Christopher.Jones@lr.edu",
-      phone: "",
       photo: "images/chris-jones.jpg",
       bio: [
         "Chris Jones was named head coach of Lenoir-Rhyne's men's and women's golf programs in May 2025. He is a Lenoir-Rhyne alumnus and played on the Bears men's golf team from 1993 to 1997.",
@@ -64,7 +63,6 @@ window.SITE = {
       name: "Dilyara Bulambayeva",
       title: "Men's & Women's Golf Graduate Assistant",
       email: "Dilyara.Bulambayeva@my.lr.edu",
-      phone: "",
       photo: "images/dilyara-bulambayeva.jpg",
       bio: [
         "Dilyara Bulambayeva joined the Lenoir-Rhyne men's and women's golf programs as a graduate assistant before the 2026-27 season. She is a native of Almaty, Kazakhstan.",

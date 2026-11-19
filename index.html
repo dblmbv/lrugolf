@@ -446,7 +446,7 @@
     const news=[...S.news].sort((a,b)=>parse(b.date)-parse(a.date)).slice(0,3);
     return `
     <section class="hero">
-      ${S.program.heroPhoto?`<img class="photo" src="${esc(S.program.heroPhoto)}" alt="Lenoir-Rhyne golf">`:scene(0)+'<span class="photo-note">Placeholder art — replace with a team photo</span>'}
+      ${S.program.heroPhoto?`<img class="photo" src="${esc(S.program.heroPhoto)}" alt="Lenoir-Rhyne golf">`:scene(0)}
       <div class="wrap">
         <span class="eyebrow">${esc(S.season)} Season</span>
         <h1>Lenoir-Rhyne <em>Golf</em></h1>
@@ -494,7 +494,7 @@
         </ul>
         <a class="btn dark" href="#/coaches">Meet the Coaches</a>
       </div>
-      <div class="card" style="position:relative;aspect-ratio:4/3">${scene(2)}<span class="photo-note">Team photo placeholder</span></div>
+      <div class="card" style="position:relative;aspect-ratio:4/3">${scene(2)}</div>
     </div></section>
 
     <div class="cta-band"><div class="wrap">

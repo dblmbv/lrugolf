@@ -109,7 +109,7 @@ window.SITE = {
     { name: "Nicholas Lombardo",  year: "So.", hometown: "Elgin, Ill.",            school: "St. Edwards HS",                     major: "Sport Management", height: "", photo: "images/nicholas-lombardo.jpg", bio: [
         "2025-26 (Freshman): Competed at the King Invitational.",
     ] },
-    { name: "Rodrigo Lugo",       year: "Gr.", hometown: "Mexico City, Mexico",    school: "Montverde Academy",                  major: "", height: "", photo: "images/rodrigo-lugo.jpg", bio: [
+    { name: "Rodrigo Lugo",       year: "Gr.", hometown: "Mexico City, Mexico",    school: "Montverde Academy",                  major: "Master of Business Administration (MBA)", height: "", photo: "images/rodrigo-lugo.jpg", bio: [
         "2024-25: Competed at the LR Fall Invitational and Flagler's Jay Jennison Cup.",
         "2023-24: Tied for 43rd at the LR Fall Invitational (238, +22).",
     ] },

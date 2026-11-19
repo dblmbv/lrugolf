@@ -152,7 +152,7 @@ window.SITE = {
         "2025-26 (Freshman): Played eight events with an 80.0 adjusted scoring average. Best finish was 28th at the Patsy Rendleman Invitational.",
     ] },
     { name: "Gabriella Gonzalez", year: "Fr.", hometown: "Spotsylvania, Va.",  school: "Riverbend HS", major: "Business Marketing", height: "", photo: "images/gabriella-gonzalez.jpg", bio: [] },
-    { name: "Kajsa Hederas",      year: "Fr.", hometown: "Vaxjo, Sweden",      school: "ProCivitas Privata Gymnasium", major: "", height: "", photo: "images/kajsa-hederas.jpg", bio: [] },
+    { name: "Kajsa Hederas",      year: "Fr.", hometown: "Vaxjo, Sweden",      school: "ProCivitas Privata Gymnasium", major: "Finance", height: "", photo: "images/kajsa-hederas.jpg", bio: [] },
     { name: "Pink Mangan",        year: "So.", hometown: "Charleston, S.C.",   school: "Shattuck St. Mary's (MN) / Green Bay", major: "Exercise Science", height: "", photo: "images/pink-mangan.jpg", bio: [
         "2025-26 (Freshman): Competed in the fall at Green Bay before joining the Bears. Played five events for Lenoir-Rhyne with an 82.8 adjusted scoring average. Best finish was 27th at the Patsy Rendleman Invitational.",
     ] },

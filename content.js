@@ -123,7 +123,7 @@ window.SITE = {
     { name: "Jared Myers",        year: "So.", hometown: "Stanley, N.C.",          school: "East Lincoln HS",                    major: "", height: "5'7\"", photo: "images/jared-myers.jpg", bio: [
         "2025-26 (Freshman): Competed in two events. Finished 25th of 78 at The Trojan (227, +11).",
     ] },
-    { name: "Nicklaus Newton",    year: "So.", hometown: "Connelly Springs, N.C.", school: "East Burke HS",                      major: "", height: "6'3\"", photo: "images/nicklaus-newton.jpg", bio: [
+    { name: "Nicklaus Newton",    year: "So.", hometown: "Connelly Springs, N.C.", school: "East Burke HS",                      major: "Business Management", height: "6'3\"", photo: "images/nicklaus-newton.jpg", bio: [
         "2025-26 (Freshman): Played four events with a 76.4 adjusted scoring average. Tied for 29th at the King Invitational (146, +6).",
     ] },
     { name: "David Quinones",     year: "Fr.", hometown: "Hampstead, N.C.",        school: "Topsail HS",                         major: "Business Management", height: "", photo: "images/david-quinones.jpg", bio: [] },

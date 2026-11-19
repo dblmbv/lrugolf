@@ -83,8 +83,8 @@ window.SITE = {
      bio:  a list of lines (one per season or highlight). Empty list = "Bio to be added".
      Source: individual player pages on lrbears.com (Nov. 2026).            */
   mensRoster: [
-    { name: "David Gee",          year: "Fr.", hometown: "Hickory, N.C.",          school: "Fred T. Foard HS",                   major: "", height: "", photo: "images/david-gee.jpg", bio: [] },
-    { name: "Adam Gregg",         year: "Sr.", hometown: "Tampico, Mexico",        school: "Montverde Academy",                  major: "", height: "6'8\"", photo: "images/adam-gregg.jpg", bio: [
+    { name: "David Gee",          year: "Fr.", hometown: "Hickory, N.C.",          school: "Fred T. Foard HS",                   major: "Business and Finance (double major)", height: "", photo: "images/david-gee.jpg", bio: [] },
+    { name: "Adam Gregg",         year: "Sr.", hometown: "Tampico, Mexico",        school: "Montverde Academy",                  major: "International Business", height: "6'8\"", photo: "images/adam-gregg.jpg", bio: [
         "2025-26 (Junior): Competed in three events with a 78.3 adjusted scoring average.",
         "2024-25 (Sophomore): Finished 30th of 93 at the LR Fall Invitational.",
         "2023-24 (Freshman): Finished 39th of 64 at the LR Fall Invitational.",
@@ -93,7 +93,7 @@ window.SITE = {
         "2025-26 (Junior): Finished 39th of 60 at the King Invitational.",
         "2024-25 (Sophomore): Competed at the LR Fall Invitational.",
     ] },
-    { name: "Will Johnston",      year: "Fr.", hometown: "Nixa, Mo.",              school: "Nixa HS",                            major: "", height: "", photo: "images/will-johnston.jpg", bio: [] },
+    { name: "Will Johnston",      year: "Fr.", hometown: "Nixa, Mo.",              school: "Nixa HS",                            major: "Biology", height: "", photo: "images/will-johnston.jpg", bio: [] },
     { name: "Kadan Jones",        year: "So.", hometown: "Sharpsburg, Md.",        school: "Boonsboro HS",                       major: "Sports Management", height: "5'8\"", photo: "images/kadan-jones.jpg", bio: [
         "2025-26 (Freshman): Competed at the King Invitational.",
     ] },
@@ -105,28 +105,28 @@ window.SITE = {
         "2025-26 (Sophomore): Played seven events with a 76.4 adjusted scoring average. Tied for 20th at The Trojan (226, +10). Finished the year ranked #194 in the region.",
         "2024-25 (Freshman): Played three events with a 75.5 adjusted scoring average. Finished 29th of 93 at the LR Fall Invitational.",
     ] },
-    { name: "Flynn Lewis",        year: "Fr.", hometown: "Cary, N.C.",             school: "Green Hope HS",                      major: "", height: "", photo: "images/flynn-lewis.jpg", bio: [] },
-    { name: "Nicholas Lombardo",  year: "So.", hometown: "Elgin, Ill.",            school: "St. Edwards HS",                     major: "", height: "", photo: "images/nicholas-lombardo.jpg", bio: [
+    { name: "Flynn Lewis",        year: "Fr.", hometown: "Cary, N.C.",             school: "Green Hope HS",                      major: "Undecided", height: "", photo: "images/flynn-lewis.jpg", bio: [] },
+    { name: "Nicholas Lombardo",  year: "So.", hometown: "Elgin, Ill.",            school: "St. Edwards HS",                     major: "Sport Management", height: "", photo: "images/nicholas-lombardo.jpg", bio: [
         "2025-26 (Freshman): Competed at the King Invitational.",
     ] },
     { name: "Rodrigo Lugo",       year: "Gr.", hometown: "Mexico City, Mexico",    school: "Montverde Academy",                  major: "", height: "", photo: "images/rodrigo-lugo.jpg", bio: [
         "2024-25: Competed at the LR Fall Invitational and Flagler's Jay Jennison Cup.",
         "2023-24: Tied for 43rd at the LR Fall Invitational (238, +22).",
     ] },
-    { name: "Johnny Malinowski",  year: "Fr.", hometown: "California, Md.",        school: "Leonardtown HS",                     major: "", height: "", photo: "images/johnny-malinowski.jpg", bio: [] },
+    { name: "Johnny Malinowski",  year: "Fr.", hometown: "California, Md.",        school: "Leonardtown HS",                     major: "Engineering Physics", height: "", photo: "images/johnny-malinowski.jpg", bio: [] },
     { name: "Archie Mathers",     year: "Sr.", hometown: "Hertfordshire, UK",      school: "Bedford School",                     major: "", height: "", photo: "images/archie-mathers.jpg", bio: [
         "2025-26 (Junior): Played seven events with a 75.3 adjusted scoring average. Posted two top-20 finishes, including a tie for 14th at The Trojan (223, +7). Placed 42nd at the SAC Championships. Finished the year ranked #142 in the region.",
         "2024-25 (Sophomore): Competed at the Bearcat Fall Invite and the LR Fall Invitational.",
         "2023-24 (Freshman): Finished 41st at the LR Fall Invitational.",
     ] },
-    { name: "Brady McIntyre",     year: "Fr.", hometown: "Salisbury, N.C.",        school: "East Rowan HS",                      major: "", height: "", photo: "images/brady-mcintyre.jpg", bio: [] },
+    { name: "Brady McIntyre",     year: "Fr.", hometown: "Salisbury, N.C.",        school: "East Rowan HS",                      major: "Finance", height: "", photo: "images/brady-mcintyre.jpg", bio: [] },
     { name: "Jared Myers",        year: "So.", hometown: "Stanley, N.C.",          school: "East Lincoln HS",                    major: "", height: "5'7\"", photo: "images/jared-myers.jpg", bio: [
         "2025-26 (Freshman): Competed in two events. Finished 25th of 78 at The Trojan (227, +11).",
     ] },
     { name: "Nicklaus Newton",    year: "So.", hometown: "Connelly Springs, N.C.", school: "East Burke HS",                      major: "", height: "6'3\"", photo: "images/nicklaus-newton.jpg", bio: [
         "2025-26 (Freshman): Played four events with a 76.4 adjusted scoring average. Tied for 29th at the King Invitational (146, +6).",
     ] },
-    { name: "David Quinones",     year: "Fr.", hometown: "Hampstead, N.C.",        school: "Topsail HS",                         major: "", height: "", photo: "images/david-quinones.jpg", bio: [] },
+    { name: "David Quinones",     year: "Fr.", hometown: "Hampstead, N.C.",        school: "Topsail HS",                         major: "Business Management", height: "", photo: "images/david-quinones.jpg", bio: [] },
   ],
 
   womensRoster: [

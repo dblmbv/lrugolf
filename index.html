@@ -348,7 +348,7 @@
   const YEAR_FULL = {'Fr.':'Freshman','So.':'Sophomore','Jr.':'Junior','Sr.':'Senior','Gr.':'Graduate'};
   const isDone = ev => parse(ev.end||ev.start) < today || !!ev.result;
   const nextEvent = list => list.filter(e=>!isDone(e)).sort((a,b)=>parse(a.start)-parse(b.start))[0];
-  const loc = ev => [ev.course, ev.city].filter(Boolean).join(' · ') || 'Location to be announced';
+  const loc = ev => [ev.course, ev.city].filter(Boolean).join(' · ');
 
   /* Golf-course illustration used wherever a photo hasn't been supplied */
   function scene(variant=0){
@@ -576,7 +576,7 @@
       return `<div class="sched-row ${cls}">
         <div class="when">${fmtRange(e.start,e.end)}<small>${parse(e.start).getFullYear()}</small></div>
         <div><h4>${esc(e.name)}${e.home?'<span class="badge home">Home</span>':''}${e.win?'<span class="badge win">Champions</span>':''}${e===nx?'<span class="badge next">Next</span>':''}</h4>
-          <div class="meta">${e.course||e.city?esc(loc(e)):ph('Location to be announced')}${' · Host: '}${e.host?esc(e.host):ph('To be confirmed')}</div></div>
+          <div class="meta">${esc([loc(e), e.host?'Host: '+e.host:''].filter(Boolean).join(' · '))}</div></div>
         <div class="res">${e.result?`<small>Team finish</small>${esc(e.result)}`:`<small>Result</small><span style="color:var(--muted);font-weight:500">Upcoming</span>`}</div>
       </div>`;
     };

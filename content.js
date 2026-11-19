@@ -261,5 +261,6 @@ window.SITE = {
       "We look for recruits who are dedicated, coachable, competitive, and willing to be part of a team. Most importantly, we want players who bring a positive attitude, strong work ethic, and a desire to represent Lenoir-Rhyne with pride.",
     ],
     contactEmail: "Christopher.Jones@lr.edu",
+    admissionsUrl: "https://www.lr.edu/admission-and-aid/guarantee",
   },
 };

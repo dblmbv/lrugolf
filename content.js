@@ -148,22 +148,22 @@ window.SITE = {
         "2024-25 (Sophomore): Played six events with an 83.9 adjusted scoring average. Tied for 27th at the SAC Championships (157, +13).",
         "2023-24: Redshirt season.",
     ] },
-    { name: "Emily Gilmour",      year: "So.", hometown: "Beaconsfield, UK",   school: "Pipers Corner School", major: "", height: "", photo: "images/emily-gilmour.jpg", bio: [
+    { name: "Emily Gilmour",      year: "So.", hometown: "Beaconsfield, UK",   school: "Pipers Corner School", major: "Criminal Justice", height: "", photo: "images/emily-gilmour.jpg", bio: [
         "2025-26 (Freshman): Played eight events with an 80.0 adjusted scoring average. Best finish was 28th at the Patsy Rendleman Invitational.",
     ] },
-    { name: "Gabriella Gonzalez", year: "Fr.", hometown: "Spotsylvania, Va.",  school: "Riverbend HS", major: "", height: "", photo: "images/gabriella-gonzalez.jpg", bio: [] },
+    { name: "Gabriella Gonzalez", year: "Fr.", hometown: "Spotsylvania, Va.",  school: "Riverbend HS", major: "Business Marketing", height: "", photo: "images/gabriella-gonzalez.jpg", bio: [] },
     { name: "Kajsa Hederas",      year: "Fr.", hometown: "Vaxjo, Sweden",      school: "ProCivitas Privata Gymnasium", major: "", height: "", photo: "images/kajsa-hederas.jpg", bio: [] },
-    { name: "Pink Mangan",        year: "So.", hometown: "Charleston, S.C.",   school: "Shattuck St. Mary's (MN) / Green Bay", major: "", height: "", photo: "images/pink-mangan.jpg", bio: [
+    { name: "Pink Mangan",        year: "So.", hometown: "Charleston, S.C.",   school: "Shattuck St. Mary's (MN) / Green Bay", major: "Exercise Science", height: "", photo: "images/pink-mangan.jpg", bio: [
         "2025-26 (Freshman): Competed in the fall at Green Bay before joining the Bears. Played five events for Lenoir-Rhyne with an 82.8 adjusted scoring average. Best finish was 27th at the Patsy Rendleman Invitational.",
     ] },
-    { name: "Reese Merrell",      year: "Fr.", hometown: "Rockwell, N.C.",     school: "North Hills Christian School", major: "", height: "", photo: "images/reese-merrell.jpg", bio: [] },
+    { name: "Reese Merrell",      year: "Fr.", hometown: "Rockwell, N.C.",     school: "North Hills Christian School", major: "Sports Management", height: "", photo: "images/reese-merrell.jpg", bio: [] },
     { name: "Eve Neild",          year: "Sr.", hometown: "Norwich, UK",        school: "Thorpe St. Andrew and Sixth Form", major: "Biochemistry; Environmental Science and Policy", height: "5'4\"", photo: "images/eve-neild.jpg", bio: [
         "2025-26 (Junior): All-SAC Third Team and CSC Academic All-District. Played 11 events with a 74.2 adjusted scoring average and a team-leading four top-10 finishes, including runner-up at the St. Simons Intercollegiate. Placed 12th of 62 at the SAC Championships. Qualified individually for the NCAA South Regional and finished 17th, the third-best regional finish in program history. Ranked #30 in the region and #53 nationally.",
         "2024-25 (Sophomore): Played nine events with a 75.1 adjusted scoring average and four top-10 finishes, including 2nd at the Emmanuel Spring Invite and 3rd at the Coastal Georgia Women's Winter Invitational. Tied for 7th at the SAC Championships (147, +3). Ranked #68 in the region and #132 nationally.",
         "2023-24 (Freshman): Played 10 events with a 75.9 adjusted scoring average. Finished 5th at both the Patsy Rendleman Invitational and the Flagler Fall Slam, with six top-20 finishes. Ranked #69 in the region and #161 nationally.",
         "Before Lenoir-Rhyne: Finished 3rd at the R&A Girls U16 Championship. Represented England and was part of the Girls East Region England Golf squad. Served as County Junior Captain and as Head Girl in Sixth Form.",
     ] },
-    { name: "Ava Palmer",         year: "Fr.", hometown: "Davison, N.C.",      school: "Lake Norman Charter HS", major: "", height: "", photo: "images/ava-palmer.jpg", bio: [] },
+    { name: "Ava Palmer",         year: "Fr.", hometown: "Davison, N.C.",      school: "Lake Norman Charter HS", major: "Medical Studies", height: "", photo: "images/ava-palmer.jpg", bio: [] },
     { name: "Jaya Wilkinson",     year: "Sr.", hometown: "London, UK",         school: "Cranleigh School", major: "Psychology", height: "", photo: "images/jaya-wilkinson.jpg", bio: [
         "2025-26 (Junior): CSC Academic All-District. Played 10 events (29 rounds) with a 77.8 adjusted scoring average. Two top-10 finishes: 5th at the Ralph Hayes Toyota D2 Elite Invitational and 10th at the Patsy Rendleman Invitational. Ranked #130 in the region.",
         "2024-25 (Sophomore): Played nine events (24 rounds) with a 77.9 adjusted scoring average. Three top-20 finishes, with a season-best 11th at the Coastal Georgia Women's Winter Invitational. Tied for 22nd at the SAC Championships, the second-best finish by a Bear.",

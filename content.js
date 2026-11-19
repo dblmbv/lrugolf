@@ -26,6 +26,7 @@ window.SITE = {
     athleticsSite: "https://lrbears.com",
     mensOfficialPage: "https://lrbears.com/sports/mens-golf",
     womensOfficialPage: "https://lrbears.com/sports/womens-golf",
+    galleryUrl: "https://lrmedia.smugmug.com/2026-27/Golf",   // official LR Athletics photo gallery
   },
 
   social: [
@@ -248,6 +249,7 @@ window.SITE = {
   ],
 
   /* ---------- PHOTO GALLERY ----------
+     The Gallery page links to program.galleryUrl (SmugMug). Optional: feature a few photos here too.
      Add { src: "images/file.jpg", caption: "", category: "Tournament" }  */
   gallery: [],
 

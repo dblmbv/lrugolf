@@ -263,6 +263,13 @@
   .modal .box.story .src{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:20px}
   .coach .ph{align-self:start;aspect-ratio:4/5;min-height:0}
   @media (max-width:640px){.coach .ph{max-height:420px;width:100%}}
+  .smug{display:grid;grid-template-columns:1fr 1.1fr;background:var(--black);color:#fff;border-radius:var(--radius);overflow:hidden;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+  .smug-art{position:relative;min-height:320px}
+  .smug-txt{padding:40px 38px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+  .smug-txt h2{font-size:clamp(28px,3.4vw,40px);margin:0 0 12px}
+  .smug-txt p{color:#cfcfcf;margin:0 0 22px;max-width:460px}
+  .smug:hover .btn.red{background:var(--lr-red-dark)}
+  @media (max-width:760px){.smug{grid-template-columns:1fr}.smug-art{min-height:180px}.smug-txt{padding:28px 24px}}
   .review-banner{background:#fff7d6;color:#5a470c;font-size:13px;text-align:center;padding:7px 12px;border-bottom:1px solid #e8d48a}
   .review-banner button{margin-left:10px;background:none;border:1px solid #b9a14f;border-radius:4px;font-size:12px;cursor:pointer;padding:2px 8px;color:#5a470c}
   main:focus{outline:none}
@@ -600,13 +607,18 @@
 
   pages.gallery = () => {
     const g=S.gallery||[];
-    const tiles = g.length
-      ? g.map((p,i)=>`<figure class="tile ${i===0?'big':''}" style="margin:0;border:0"><img src="${esc(p.src)}" alt="${esc(p.caption||'')}" title="${esc(p.caption||'')}"></figure>`).join('')
-      : ['Team photo','Tournament action','Practice session','Home course','Signing day','Team travel','Awards','Behind the scenes','Women\'s team','Men\'s team'].map((t,i)=>`<div class="tile ${i===0?'big':''}">${t}<br>photo placeholder</div>`).join('');
+    const url=S.program.galleryUrl;
+    const feature = url?`<a class="smug" href="${esc(url)}" target="_blank" rel="noopener">
+        <div class="smug-art">${scene(1)}</div>
+        <div class="smug-txt"><div class="eyebrow">${esc(S.season)} Season</div>
+          <h2>Official LR Golf Photo Gallery</h2>
+          <p>Tournament action, team photos and more from Lenoir-Rhyne Athletics media. New photos appear there as soon as they're posted.</p>
+          <span class="btn red">View Photos on SmugMug →</span></div></a>`:'';
+    const tiles = g.map((p,i)=>`<figure class="tile ${i===0?'big':''}" style="margin:0;border:0"><img src="${esc(p.src)}" alt="${esc(p.caption||'')}" title="${esc(p.caption||'')}"></figure>`).join('');
     return `${pageHead('Lenoir-Rhyne Golf','Photo Gallery','Team photos, tournaments, practice and moments from the season.')}
     <section class="block"><div class="wrap">
-      ${g.length?'':`<div style="margin-bottom:20px">${phBox('<b>No photos added yet.</b> Add approved images to the <code>gallery</code> list in <code>content.js</code> and they will replace these tiles.')}</div>`}
-      <div class="gal">${tiles}</div>
+      ${feature}
+      ${g.length?`<div class="sec-title" style="margin-top:44px"><h2>Featured Photos</h2></div><div class="gal">${tiles}</div>`:''}
     </div></section>`;
   };
 

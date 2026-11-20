@@ -120,7 +120,7 @@ window.SITE = {
         "2023-24 (Freshman): Finished 41st at the LR Fall Invitational.",
     ] },
     { name: "Brady McIntyre",     year: "Fr.", hometown: "Salisbury, N.C.",        school: "East Rowan HS",                      major: "Finance", height: "", photo: "images/brady-mcintyre.jpg", bio: [] },
-    { name: "Jared Myers",        year: "So.", hometown: "Stanley, N.C.",          school: "East Lincoln HS",                    major: "", height: "5'7\"", photo: "images/jared-myers.jpg", bio: [
+    { name: "Jared Myers",        year: "So.", hometown: "Stanley, N.C.",          school: "East Lincoln HS",                    major: "Business Management", height: "5'7\"", photo: "images/jared-myers.jpg", bio: [
         "2025-26 (Freshman): Competed in two events. Finished 25th of 78 at The Trojan (227, +11).",
     ] },
     { name: "Nicklaus Newton",    year: "So.", hometown: "Connelly Springs, N.C.", school: "East Burke HS",                      major: "Business Management", height: "6'3\"", photo: "images/nicklaus-newton.jpg", bio: [

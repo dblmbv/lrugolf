@@ -206,6 +206,16 @@ window.SITE = {
      body: a list of paragraphs (the full recap). Each paragraph in quotes, followed by a comma.
      source: link to the official story on lrbears.com.                                   */
   news: [
+    { date: "2026-10-20", team: "men", title: "Men's golf finishes 14th at Patriot Fall Classic",
+      summary: "The Bears lowered their score every round at Lander's event, led by Archie Mathers and Flynn Lewis.",
+      body: [
+        "Lenoir-Rhyne placed 14th in the 16-team field at the Patriot Fall Classic, hosted by Lander in Greenwood County, S.C. The Bears posted a 920 team total and shot a better score in each round than the one before. Host Lander won the event at 851 (-13), four strokes ahead of runner-up Erskine.",
+        "Senior Archie Mathers and freshman Flynn Lewis shared the team lead, tying for 75th at 229 (+13). Mathers went 78-76-75, while Lewis closed with a 1-under-par 71, the best single round by a Bear all week, after opening 81-77.",
+        "Freshman Brady McIntyre tied for 85th at 232 (79-76-77). Freshman David Gee (78-80-76) and sophomore Nicklaus Newton (80-78-76) tied for 90th at 234 (+18).",
+        "Up next: the Bears return home to host the LR Fall Invitational at Lake Hickory on October 26-27.",
+      ],
+      photo: "", source: "https://lrbears.com/news/2026/10/20/mens-golf-finishes-14th-at-patriot-fall-classic.aspx" },
+
     { date: "2026-10-29", team: "women", title: "Women's golf closes the fall ranked 26th; Eve Neild 23rd individually",
       summary: "After four top-10 finishes and a runner-up showing, the Bears are ranked 26th nationally in the Clippd fall rankings.",
       body: [

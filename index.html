@@ -270,6 +270,20 @@
   .smug-txt p{color:#cfcfcf;margin:0 0 22px;max-width:460px}
   .smug:hover .btn.red{background:var(--lr-red-dark)}
   @media (max-width:760px){.smug{grid-template-columns:1fr}.smug-art{min-height:180px}.smug-txt{padding:28px 24px}}
+  .lrh-box{margin-top:36px;background:#fff;border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .lrh-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:18px 22px;border-bottom:3px solid var(--lr-red)}
+  .lrh-head h3{font-size:20px;margin:0}
+  .lrh-head span{font-size:12.5px;color:var(--muted)}
+  .lrh-box ul{list-style:none;margin:0;padding:0}
+  .lrh-box li a{display:grid;grid-template-columns:170px 1fr auto;gap:14px;align-items:center;padding:13px 22px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+  .lrh-box li:first-child a{border-top:0}
+  .lrh-box li a:hover{background:#faf7f7}
+  .lrh-box li a:hover .lrh-title{color:var(--lr-red)}
+  .lrh-meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+  .lrh-team{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lr-red)}
+  .lrh-title{font-weight:600;font-size:15px}
+  .lrh-arrow{color:var(--muted)}
+  @media (max-width:640px){.lrh-box li a{grid-template-columns:1fr auto}.lrh-meta{grid-column:1/-1}}
   .review-banner{background:#fff7d6;color:#5a470c;font-size:13px;text-align:center;padding:7px 12px;border-bottom:1px solid #e8d48a}
   .review-banner button{margin-left:10px;background:none;border:1px solid #b9a14f;border-radius:4px;font-size:12px;cursor:pointer;padding:2px 8px;color:#5a470c}
   main:focus{outline:none}
@@ -435,6 +449,21 @@
     document.body.appendChild(m); m.querySelector('.close').focus();
   }
 
+  /* Latest from lrbears.com: headlines.json is refreshed automatically from the official feeds */
+  let headlinesP = null;
+  function fillHeadlines(){
+    const boxes=document.querySelectorAll('.lrh'); if(!boxes.length) return;
+    headlinesP = headlinesP || fetch('headlines.json?v=' + Date.now()).then(r=>r.ok?r.json():null).catch(()=>null);
+    headlinesP.then(d=>{
+      const items=(d&&d.items)||[]; if(!items.length) return;
+      boxes.forEach(b=>{
+        const n=+b.dataset.limit||6;
+        b.innerHTML=`<div class="lrh-box"><div class="lrh-head"><h3>Latest from lrbears.com</h3><span>Official stories from LR Athletics · updated automatically</span></div>
+          <ul>${items.slice(0,n).map(i=>`<li><a href="${esc(i.url)}" target="_blank" rel="noopener"><span class="lrh-meta">${i.date?fmtDate(i.date):''}<span class="lrh-team">${i.team==='women'?"Women's":"Men's"}</span></span><span class="lrh-title">${esc(i.title)}</span><span class="lrh-arrow">↗</span></a></li>`).join('')}</ul></div>`;
+      });
+    });
+  }
+
   /* ---------------- PAGES ---------------- */
   const pages = {};
 
@@ -481,6 +510,7 @@
     <section class="block"><div class="wrap">
       <div class="sec-title"><h2>Latest News</h2><a href="#/news">All news →</a></div>
       <div class="grid g3">${news.map(newsCard).join('')}</div>
+      <div class="lrh" data-limit="4"></div>
     </div></section>
 
     <section class="block white"><div class="wrap split">
@@ -601,6 +631,7 @@
     return `${pageHead('Lenoir-Rhyne Golf','News & Updates','Tournament recaps, announcements and program achievements.')}
     <section class="block"><div class="wrap">
       <div class="grid g3">${items.map(newsCard).join('')}</div>
+      <div class="lrh" data-limit="8"></div>
       <p style="margin-top:28px;font-size:14px;color:var(--muted)">Story archives: <a href="${esc(S.program.mensOfficialPage)}/archives">Men's</a> · <a href="${esc(S.program.womensOfficialPage)}/archives">Women's</a> on lrbears.com</p>
     </div></section>`;
   };
@@ -685,6 +716,7 @@
     document.querySelectorAll('nav.primary a').forEach(a=>a.classList.toggle('active',a.dataset.r===(pages[r]?r:'home')));
     $('#nav').classList.remove('open'); $('#menuBtn').setAttribute('aria-expanded','false');
     window.scrollTo(0,0);
+    fillHeadlines();
     document.title = (r==='home'?'':(document.querySelector(`nav a[data-r="${r}"]`)?.textContent+' | '))+'Lenoir-Rhyne Golf';
   }
   $('#menuBtn').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o);};

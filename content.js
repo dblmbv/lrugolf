@@ -179,7 +179,7 @@ window.SITE = {
     { start: "2026-09-28", end: "2026-09-29", name: "Wolves Fall Intercollegiate",     city: "Lancaster, S.C.",         course: "Edgwater GC",                       host: "Newberry College",  result: "1st of 9 teams", win: true },
     { start: "2026-10-19", end: "2026-10-20", name: "Patriot Fall Classic",            city: "Ninety-Six, S.C.",        course: "Patriot Club at Grand Harbour",     host: "Lander",            result: "14th of 16 teams" },
     { start: "2026-10-26", end: "2026-10-27", name: "LR Fall Invitational",            city: "Hickory, N.C.",           course: "Lake Hickory at Catawba Springs",   host: "Lenoir-Rhyne",      result: "2nd of 15 teams", home: true },
-    { start: "2027-02-08", end: "2027-02-09", name: "Spring Kickoff",                  city: "St. Augustine, Fla.",     course: "St. John's Golf & Country Club",    host: "",                  result: "" },
+    { start: "2027-02-08", end: "2027-02-09", name: "Spring Kickoff",                  city: "St. Augustine, Fla.",     course: "St. John's Golf & Country Club",    host: "",                  result: "3rd of 15 teams" },
     { start: "2027-03-01", end: "2027-03-02", name: "Tidewater Intercollegiate",       city: "North Myrtle Beach, S.C.",course: "Tidewater GC",                      host: "",                  result: "" },
     { start: "2027-03-15", end: "2027-03-16", name: "Ralph Hargett Intercollegiate",   city: "Monroe, N.C.",            course: "Rolling Hills",                     host: "",                  result: "" },
     { start: "2027-03-22", end: "2027-03-23", name: "Tennessee River Rumble",          city: "Lenoir City, Tenn.",      course: "Windriver",                         host: "",                  result: "" },
@@ -206,6 +206,15 @@ window.SITE = {
      body: a list of paragraphs (the full recap). Each paragraph in quotes, followed by a comma.
      source: link to the official story on lrbears.com.                                   */
   news: [
+    { date: "2026-11-26", team: "men", title: "Men's golf places 3rd at Spring Kickoff",
+      summary: "Archie Mathers and Eve Neild lead the Bears to a top-three finish in St. Augustine.",
+      body: [
+        "Lenoir-Rhyne finished 3rd of 15 teams at the Spring Kickoff at St. John's Golf & Country Club in St. Augustine, Fla.",
+        "Senior Archie Mathers led the way, going 78-76-75 for a 225 to tie for 9th.",
+        "Senior Eve Neild added a 71 in the final round to tie for 14th.",
+      ],
+      photo: "", source: "https://lrbears.com/news/2026/11/26/mens-golf-spring-kickoff.aspx" },
+
     { date: "2026-10-20", team: "men", title: "Men's golf finishes 14th at Patriot Fall Classic",
       summary: "The Bears lowered their score every round at Lander's event, led by Archie Mathers and Flynn Lewis.",
       body: [

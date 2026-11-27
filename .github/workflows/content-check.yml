@@ -1,0 +1,24 @@
+# Content gate: checks content.js on every pull request and every change to main.
+# A failing check shows a red X with the exact problems. With branch protection on,
+# a pull request cannot be merged until it passes.
+name: Content check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Check site content
+        run: node .github/scripts/check_content.js | tee -a "$GITHUB_STEP_SUMMARY"; exit ${PIPESTATUS[0]}
